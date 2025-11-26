@@ -47,15 +47,9 @@
 <a href="">Explore the boundaries of visual-text compression.</a>       
 </p>
 
-## Release
-
-- [2025/10/23]🚀🚀🚀 DeepSeek-OCR is now officially supported in upstream [vLLM](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html#installing-vllm). Thanks to the [vLLM](https://github.com/vllm-project/vllm) team for their help.
-- [2025/10/20]🚀🚀🚀 We release DeepSeek-OCR, a model to investigate the role of vision encoders from an LLM-centric viewpoint.
-
 ## Contents
 
 - [Install](#install)
-- [vLLM Inference](#vllm-inference)
 - [Transformers Inference](#transformers-inference)
 
 ## Install
@@ -77,16 +71,11 @@ conda activate deepseek-ocr
 
 3. Packages
 
-- download the vllm-0.8.5 [whl](https://github.com/vllm-project/vllm/releases/tag/v0.8.5)
-
 ```Shell
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118
-pip install vllm-0.8.5+cu118-cp38-abi3-manylinux1_x86_64.whl
 pip install -r requirements.txt
 pip install flash-attn==2.7.3 --no-build-isolation
 ```
-
-**Note:** if you want vLLM and transformers codes to run in the same environment, you don't need to worry about this installation error like: vllm 0.8.5+cu118 requires transformers>=4.51.1
 
 ## Transformers-Inference
 
@@ -114,7 +103,6 @@ res = model.infer(tokenizer, prompt=prompt, image_file=image_file, output_path =
 or you can
 
 ```Shell
-cd DeepSeek-OCR-master/DeepSeek-OCR-hf
 python run_dpsk_ocr.py
 ```
 
